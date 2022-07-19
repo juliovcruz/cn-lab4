@@ -46,8 +46,7 @@ func main() {
 			output += "\n----------------------------------------"
 			output += "\n" + string(content)
 			output += "\n----------------------------------------"
-			message = []byte(output)
-			err = conn.WriteMessage(mt, message)
+			err = conn.WriteMessage(mt, []byte(output))
 			if err != nil {
 				log.Println("write failed:", err)
 				break
